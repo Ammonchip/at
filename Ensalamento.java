@@ -29,8 +29,7 @@ public class Ensalamento {
         
         for (TurmaEmSala i : this.ensalamento) {
             if (i.sala == sala) {
-                i.turma.horarios.contains(horario);
-                return false;
+                if (i.turma.horarios.contains(horario)) return false;
             }
         }
 
@@ -89,17 +88,47 @@ public class Ensalamento {
     String relatorioResumoEnsalamento() {
         return String.format("Total de Salas: %d\nTotal de Turmas: %d\nTurmas Alocadas: %d\nEspaços Livres: %d\n", 
         this.salas.size(),
-        this.ensalamento.size(),
+        this.turmas.size(),
         getTotalTurmasAlocadas(),
         getTotalEspacoLivre());
     }
 
-    /*String relatorioTurmasPorSala() {
-        return String;
+    String relatorioTurmasPorSala() {
+
+        ArrayList<String> ans = new ArrayList<String>();
+        ans.add(relatorioResumoEnsalamento() + "\n");
+
+        for (Sala sala : this.salas) {
+            ans.add("--- " + sala.getDescricao() + "---\n");
+
+            for (TurmaEmSala foo : this.ensalamento) {
+                if (sala == foo.sala) {
+                    ans.add(foo.turma.getDescricao() + "\n");
+                }
+            }
+        }
+
+        return String.join("", ans);
     }
-    tedt
-    String 	relatorioSalasPorTurma() {
-        return String;
-    }*/
+    
+    String relatorioSalasPorTurma() {
+        ArrayList<String> ans = new ArrayList<String>();
+        ans.add(relatorioResumoEnsalamento() + "\n");
+        for (Turma turma : this.turmas) {
+            boolean boo = false;
+            ans.add(turma.getDescricao() + "\n");
+
+            for (TurmaEmSala foo : this.ensalamento) {
+                if (turma == foo.turma) {
+                    if (foo.sala != null) {
+                        ans.add(foo.turma.getDescricao() + "\n");
+                        boo = true;
+                    }
+                }
+            }
+            if (!boo) ans.add("Sala: SEM SALA" + "\n");
+        }
+        return String.join("", ans);
+    }
 
 }

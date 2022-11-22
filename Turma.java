@@ -34,7 +34,7 @@ public class Turma {
             dictSem.put(i + 1, dia[k]);
         }
         
-        ArrayList<String> ans = new ArrayList<>();
+        ArrayList<String> ans = new ArrayList<String>();
 
         for(int i = 0; i < horarios.size(); i++) {
             ans.add(dictSem.get(horarios.get(i))+" "+ dictHora.get(horarios.get(i)));
