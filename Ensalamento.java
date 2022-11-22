@@ -94,12 +94,12 @@ public class Ensalamento {
         getTotalEspacoLivre());
     }
 
-    String relatorioTurmasPorSala() {
+    /*String relatorioTurmasPorSala() {
         return String;
     }
     
     String 	relatorioSalasPorTurma() {
         return String;
-    }
+    }*/
 
 }
