@@ -1,4 +1,4 @@
-public class Main{
+public class EnsalamentoMain{
     public static void main(String[] args) {
         Ensalamento e1 = new Ensalamento();
         Sala s1 = new Sala(2, 102, 80, true);
