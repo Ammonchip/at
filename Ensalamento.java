@@ -62,7 +62,7 @@ public class Ensalamento {
     void alocarTodas() {
         for (Turma turma : this.turmas) {
             boolean foo = false;
-            for (int i = 0; !foo || i < this.salas.size(); i++) {
+            for (int i = 0; !foo && i < this.salas.size(); i++) {
                 foo = alocar(turma, this.salas.get(i));
             }
             if(!foo) this.ensalamento.add(new TurmaEmSala(turma, null));
@@ -121,7 +121,7 @@ public class Ensalamento {
             for (TurmaEmSala foo : this.ensalamento) {
                 if (turma == foo.turma) {
                     if (foo.sala != null) {
-                        ans.add(foo.turma.getDescricao() + "\n");
+                        ans.add("Sala: " + foo.sala.getDescricao() + "\n");
                         boo = true;
                     }
                 }

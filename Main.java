@@ -8,6 +8,12 @@ public class Main{
         t1.addHorario(21);
         t1.addHorario(35);
         e1.addTurma(t1);
+        Sala s2 = new Sala(2, 202, 100, false);
+        e1.addSala(s2);
+        e1.alocar(t1, s2);
+        Sala s3 = new Sala(2, 301, 50, true);
+        e1.addSala(s3);
+        e1.alocarTodas();
         System.out.println(e1.relatorioSalasPorTurma());
     }
 }

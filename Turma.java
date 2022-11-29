@@ -43,6 +43,6 @@ public class Turma {
         return String.join(", ", ans);
     }
     public String getDescricao(){
-        return "Turma: "+this.nome+"\n"+"Professor: "+this.professor+"\n"+"Número de alunos: "+this.numAlunos+"\n"+"Horário: "+getHorariosString()+"\n"+"Acessível: "+(acessivel ? "sim" : "não");
+        return "Turma: "+this.nome+"\n"+"Professor: "+this.professor+"\n"+"Número de Alunos: "+this.numAlunos+"\n"+"Horário: "+getHorariosString()+"\n"+"Acessível: "+(acessivel ? "sim" : "não");
     }
 }
